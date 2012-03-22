@@ -428,7 +428,7 @@ wl_connection_vmarshal(struct wl_connection *connection,
 
 			s = va_arg(ap, const char *);
 			length = s ? strlen(s) + 1: 0;
-			if (end - p < DIV_ROUNDUP(length, sizeof *p) + 1)
+			if (end - p < (int)DIV_ROUNDUP(length, sizeof *p) + 1)
 				goto err;
 			*p++ = length;
 
@@ -478,7 +478,7 @@ wl_connection_vmarshal(struct wl_connection *connection,
 				*p++ = 0;
 				break;
 			}
-			if (end - p < DIV_ROUNDUP(array->size, sizeof *p) + 1)
+			if (end - p < (int)DIV_ROUNDUP(array->size, sizeof *p) + 1)
 				goto err;
 			*p++ = array->size;
 			memcpy(p, array->data, array->size);
