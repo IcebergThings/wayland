@@ -507,14 +507,14 @@ wl_display_iterate(struct wl_display *display, uint32_t mask)
 	len = wl_connection_data(display->connection, mask);
 
 	while (len > 0) {
-		if (len < sizeof p)
+		if ((uint32_t)len < sizeof p)
 			break;
 		
 		wl_connection_copy(display->connection, p, sizeof p);
 		object = p[0];
 		opcode = p[1] & 0xffff;
 		size = p[1] >> 16;
-		if (len < size)
+		if ((uint32_t)len < size)
 			break;
 
 		handle_event(display, object, opcode, size);

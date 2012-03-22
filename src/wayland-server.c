@@ -189,7 +189,7 @@ wl_client_connection_data(int fd, uint32_t mask, void *data)
 		return 1;
 	}
 
-	while (len >= sizeof p) {
+	while (len >= (int)sizeof p) {
 		wl_connection_copy(connection, p, sizeof p);
 		opcode = p[1] & 0xffff;
 		size = p[1] >> 16;

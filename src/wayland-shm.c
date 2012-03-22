@@ -134,7 +134,7 @@ shm_create_buffer(struct wl_client *client, struct wl_resource *resource,
 		return;
 	}
 
-	if (width < 0 || height < 0 || stride < width) {
+	if (width < 0 || height < 0 || stride < (uint32_t)width) {
 		wl_resource_post_error(resource,
 				       WL_SHM_ERROR_INVALID_STRIDE,
 				       "invalid width, height or stride (%dx%d, %u)",

@@ -99,7 +99,7 @@ wl_array_release(struct wl_array *array)
 WL_EXPORT void *
 wl_array_add(struct wl_array *array, int size)
 {
-	int alloc;
+	uint32_t alloc;
 	void *data, *p;
 
 	if (array->alloc > 0)

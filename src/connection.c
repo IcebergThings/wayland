@@ -546,7 +546,7 @@ wl_connection_demarshal(struct wl_connection *connection,
 	struct wl_closure *closure = &connection->receive_closure;
 
 	count = strlen(message->signature) + 2;
-	if (count > ARRAY_LENGTH(closure->types)) {
+	if (count > (int)ARRAY_LENGTH(closure->types)) {
 		printf("too many args (%d)\n", count);
 		errno = EINVAL;
 		wl_connection_consume(connection, size);
