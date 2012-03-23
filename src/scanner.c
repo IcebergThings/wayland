@@ -389,7 +389,8 @@ character_data(void *data, const XML_Char *s, int len)
 {
 	struct parse_context *ctx = data;
 
-	if (ctx->character_data_length + len > sizeof (ctx->character_data)) {
+	if (ctx->character_data_length + len >
+	    (int)sizeof (ctx->character_data)) {
 		fprintf(stderr, "too much character data");
 		exit(EXIT_FAILURE);
 	    }
