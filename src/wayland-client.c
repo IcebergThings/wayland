@@ -396,8 +396,8 @@ wl_display_connect(const char *name)
 	return display;
 }
 
-WL_EXPORT void
-wl_display_destroy(struct wl_display *display)
+static void
+display_disconnect(struct wl_display *display)
 {
 	struct wl_global *global, *gnext;
 	struct wl_global_listener *listener, *lnext;
@@ -413,6 +413,18 @@ wl_display_destroy(struct wl_display *display)
 
 	close(display->fd);
 	free(display);
+}
+
+WL_EXPORT void
+wl_display_destroy(struct wl_display *display)
+{
+	display_disconnect(display);
+}
+
+WL_EXPORT void
+wl_display_disconnect(struct wl_display *display)
+{
+	display_disconnect(display);
 }
 
 WL_EXPORT int
