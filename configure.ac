@@ -2,13 +2,13 @@ AC_PREREQ([2.64])
 
 m4_define([wayland_major_version], [1])
 m4_define([wayland_minor_version], [0])
-m4_define([wayland_micro_version], [4])
+m4_define([wayland_micro_version], [5])
 m4_define([wayland_version],
           [wayland_major_version.wayland_minor_version.wayland_micro_version])
 
 AC_INIT([wayland],
         [wayland_version],
-        [https://bugs.freedesktop.org/enter_bug.cgi?product=wayland],
+        [https://bugs.freedesktop.org/enter_bug.cgi?product=Wayland&component=wayland&version=1.0.5],
         [wayland],
         [http://wayland.freedesktop.org/])
 
