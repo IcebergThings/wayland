@@ -21,15 +21,11 @@ cscope.out
 ctags
 /wayland-scanner.m4
 /autom4te.cache
-/compile
 /config.guess
 /config.h
 /config.h.in
 /config.log
-/config.mk
 /config.status
-/config.sub
-/configure
 /depcomp
 /ltmain.sh
 /missing
