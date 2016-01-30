@@ -19,7 +19,6 @@
 .dirstamp
 cscope.out
 ctags
-/aclocal.m4
 /wayland-scanner.m4
 /autom4te.cache
 /compile
@@ -32,8 +31,6 @@ ctags
 /config.sub
 /configure
 /depcomp
-/install-sh
-/libtool
 /ltmain.sh
 /missing
 /stamp-h1
@@ -43,4 +40,3 @@ Makefile.in
 exec-fd-leak-checker
 fixed-benchmark
 /wayland-scanner
-protocol/*.[ch]
